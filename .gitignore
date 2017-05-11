@@ -1,3 +1,5 @@
+Gemfile.lock
+
 # jekyll gitignore 
 _site/
 .sass-cache/

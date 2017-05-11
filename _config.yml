@@ -9,11 +9,16 @@
 title: Manvendra's Blog
 email: manvendra0310@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This blog is currently work in progress
+  What a blog.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://github.com/manu-chroma" # the base hostname & protocol for your site
 twitter_username: manu_chroma
 github_username:  manu-chroma
-
 # Build settings
 markdown: kramdown
+
+# publish future posts already 
+future: true
+# gems 
+gems:
+  - jemoji
