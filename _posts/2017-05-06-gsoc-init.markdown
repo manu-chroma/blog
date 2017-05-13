@@ -4,8 +4,12 @@ title:  "GSoC '17 init"
 date:   2017-05-06 15:10:24 +0530
 categories: GSoC '17
 ---
-Hey, results are out and I will be working on on improving Common Worklow Language reference implementation [cwltool](github.com/common-workflow-language/cwltool) this summer. CWL falls under umbrella org Open Bioinformatics Foundation.
+
+
+<img src="/blog/assets/GSoC2016Logo.jpg" alt="GSoC banner" align="center" />
+
+Hey everyone, I'm happy to announce that I got selected in GSoC '17 and will be working on improving Common Worklow Language reference implementation: [cwltool](github.com/common-workflow-language/cwltool) this summer. Just like last year, Common Workflow Language has partcipated under the umbrella org [Open Bioinformatics Foundation](https://summerofcode.withgoogle.com/organizations/5447537956749312/).
 
 Checkout my [project proposal here](https://summerofcode.withgoogle.com/projects/#5468194121711616)
 
-Looking forward to a great and productive summer! :grin:
+Looking forward to an exciting and productive summer! :grin:
