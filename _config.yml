@@ -18,7 +18,7 @@ github_username:  manu-chroma
 markdown: kramdown
 
 # publish future posts already 
-future: true
+# future: true
 # gems 
 gems:
   - jemoji
