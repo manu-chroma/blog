@@ -17,8 +17,11 @@ github_username:  manu-chroma
 # Build settings
 markdown: kramdown
 
-# publish future posts already 
+# publish future posts already
 # future: true
-# gems 
+# gems
 gems:
   - jemoji
+
+# Google services
+google_analytics: UA-72356300-5
