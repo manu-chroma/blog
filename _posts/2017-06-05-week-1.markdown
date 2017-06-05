@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Week 1: A short week"
+categories: GSoC '17
+published: true
+---
+
+This week's progress has been a little slow but steady. I finished running the automated fixers: ``2to3`` and ``modernize`` on ``cwltool/`` and ``tests/`` folder. These handled the very basic and mundance syntactic changes to make codebase compatible. Then I manually made changes to handle standard libraries incompatibilities such as  ``urlparse``, ``urllib``, ``StringIO``. [``six``](https://github.com/benjaminp/six) library came really handy at this time, as it exposes ``six.moves`` package which provides unified API (exactly smiliar to python3) which works well in ``py2+3``.
+
+When running the test suite in ``py3``, it got stuck at one of the testcases and I just couldn't figure out what was causing it. This time around, PyCharm's debugger came in really handy. I ran the same test suite using pycharm debugger and paused at the hung up test to find out it was stuck in this ``while`` loop :sweat_smile:
+
+``` python
+if compute_checksum:
+     checksum = hashlib.sha1()
+     while contents != "":  <---                              
+         checksum.update(contents)
+```
+Since byte literals are completely separated out from strings (which are unicode by default) in ``python3``, this equality can never hold true and thus, infinite loop here. A quick fix here was do this:
+``while contents != b"":``
+
+Micheal had previously encouraged me to use ``ipython`` debugger which helped me find a not so obvious error in a previous PR. I had used ``gdb`` tool before to find seg faults in my C++ code but never needed to ``python`` debugger. I think it will come really handy now since I'm trying to fix failing unit tests.
+
+Also, I was able to setup Coveralls CI for ``schema_salad`` on my fork. This will comment coverage report on every PR. This will be a good motivation for the comitters to add ``unit tests`` if their code changes drops the total code coverage.
+
+Week 2 To Do:
+
+- I will be spending most of my week 2 in passing ``cwltool`` unit tests. Currently trying to figure out the ``avro`` library API inconsistancy and failing tests due to that.
+- Make progress in upgrading ``mypy`` for ``schema_salad``. Try out typesheds [written by Aleksandr](https://github.com/AleksandrSl/schema_salad/blob/python3-support/typeshed/2and3/mistune.pyi)
+
+PS: I've written this blog a bit early so that it aligns with the GSoC weekly timeline and I can put up a new blog post every Sunday from hereon.
