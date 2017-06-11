@@ -5,7 +5,7 @@ categories: GSoC '17
 published: true
 ---
 
-This week's progress has been a little slow but steady. I finished running the automated fixers: ``2to3`` and ``modernize`` on ``cwltool/`` and ``tests/`` folder. These handled the very basic and mundance syntactic changes to make codebase compatible. Then I manually made changes to handle standard libraries incompatibilities such as  ``urlparse``, ``urllib``, ``StringIO``. [``six``](https://github.com/benjaminp/six) library came really handy at this time, as it exposes ``six.moves`` package which provides unified API (exactly smiliar to python3) which works well in ``py2+3``.
+This week's progress has been a little slow but steady. I finished running the automated fixers: ``2to3`` and ``modernize`` on ``cwltool/`` and ``tests/`` folder. These handled the very basic and mundance syntactic changes to make codebase compatible. Then I manually made changes to handle standard libraries incompatibilities such as  ``urlparse``, ``urllib``, ``StringIO``. [``six``](https://github.com/benjaminp/six) library came really handy at this time, as it exposes ``six.moves`` package which provides unified API (exactly smiliar to python3) which works well in ``py2+3``. Check out my WIP Pull Request [here](https://github.com/common-workflow-language/cwltool/pull/412/)
 
 When running the test suite in ``py3``, it got stuck at one of the testcases and I just couldn't figure out what was causing it. This time around, PyCharm's debugger came in really handy. I ran the same test suite using pycharm debugger and paused at the hung up test to find out it was stuck in this ``while`` loop :sweat_smile:
 
@@ -16,7 +16,7 @@ if compute_checksum:
          checksum.update(contents)
 ```
 Since byte literals are completely separated out from strings (which are unicode by default) in ``python3``, this equality can never hold true and thus, infinite loop here. A quick fix here was do this:
-``while contents != b"":``
+``while contents != b"":`` [Related commit](https://github.com/common-workflow-language/cwltool/pull/412/commits/33a4f4cacb48ac738176409c68670515f7a42f5a)	
 
 Micheal had previously encouraged me to use ``ipython`` debugger which helped me find a not so obvious error in a previous PR. I had used ``gdb`` tool before to find seg faults in my C++ code but never needed to ``python`` debugger. I think it will come really handy now since I'm trying to fix failing unit tests.
 
