@@ -10,7 +10,8 @@ title: Manvendra's Blog
 email: manvendra0310@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   What a blog.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+root: "/"
 url: "https://github.com/manu-chroma" # the base hostname & protocol for your site
 twitter_username: manu_chroma
 github_username:  manu-chroma
