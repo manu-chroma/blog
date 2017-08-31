@@ -2,13 +2,10 @@
 layout: post
 title:  "Google Summer of Code 2017: Final Report"
 categories: GSoC '17
-published: false
+published: true
 ---
 
-This report was initially published as [a GitHub gist](https://gist.github.com/manu-chroma/8e10ea9fd728356a4363b5af1f0d8aaa) 
-
-# Google Summer of Code 2017: Final Report
-by [Manvendra Singh](github.com/manu-chroma)
+**This report was initially published as [a GitHub gist](https://gist.github.com/manu-chroma/8e10ea9fd728356a4363b5af1f0d8aaa)**
 
 Hey everyone! I'm Manvendra, a Google Summer of Code '17 student developer. This summer, I worked on [Common Workflow Language Project](github.com/common-workflow-language/) which comes under [OBF Org](https://www.open-bio.org/wiki/Main_Page). This is a summary report on what I managed to do in the past three months. 
 
@@ -79,7 +76,8 @@ Here's a list of my PR's which got merged during the coding period.
 ``` bash 
 git log --author="Manvendra Singh" --oneline --shortstat
 ```
-| Repo         |     LOC ++ |  LOC -- | 
+
+| Repo         |     LOC++ |  LOC-- | 
 |--------------|------------|---------| 
 | cwltool      |     6,731  |  9,469  | 
 | schema_salad |     1,965  |  3,158  | 
