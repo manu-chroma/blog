@@ -5,6 +5,8 @@ categories: GSoC '17
 published: false
 ---
 
+This report was initially published as [a GitHub gist](https://gist.github.com/manu-chroma/8e10ea9fd728356a4363b5af1f0d8aaa) 
+
 # Google Summer of Code 2017: Final Report
 by [Manvendra Singh](github.com/manu-chroma)
 
@@ -89,26 +91,22 @@ git log --author="Manvendra Singh" --oneline --shortstat
 ## Work done 
 
 
-<!-- <center> -->
+<!-- <center> --><!-- 
 ![img](http://imgur.com/aZpTrSt.png)
-<!-- </center> -->
+</center> -->
 
-<!-- @todo: caption for tweet\: one of the highpoints of my work: shipping work. or something better?: -->
- <!-- -->
+### Phase 1: 7 weeks
 
-#### Phase 1: 7 weeks
-
-- Make Schema Salad code Py3 compatible. The majority of the changes were made in [this Mega PR.](https://github.com/common-workflow-language/schema_salad/pull/109)
-- Improved ``mypy`` annotations and took care of other bugs along the way. 
+- Made Schema Salad code Python 3 compatible and fixed mypy annotations. The majority of the changes were made in [this Mega PR.](https://github.com/common-workflow-language/schema_salad/pull/109)
 - Worked on CWL Py3 compatibility: Again majority of the changes came in [a Mega PR](https://github.com/common-workflow-language/cwltool/pull/442) 
-- Fixed ``mypy`` annotations and upgraded to ``v.511``
-- Ran ``mypy`` in Python 3 mode
+- Fixed mypy annotations and upgraded to ``v.511``
+- Ran mypy in Python 3 mode without any errors. This required adding compatible stub files.
 - Dealt with [Apache Avro issues](https://github.com/common-workflow-language/cwltool/issues/524)
 - Fixed failing unit tests
 - Fixed failing conformance tests
-- Added Py3 compat to CWL Test
+- Added Py3 compatibility to CWL Test
 
-#### Phase 2: 4 weeks 
+### Phase 2: 4 weeks 
 
 I tracked my _Phase 2_ progress using [Manvendra's Issue Tracker](https://github.com/orgs/common-workflow-language/projects/3?fullscreen=true). This included addressing very specific issues and enhancements: 
 
@@ -125,7 +123,7 @@ I tracked my _Phase 2_ progress using [Manvendra's Issue Tracker](https://github
 
 Some of the major challenges along the way:
 
-- CWL User guide is rich but the codebase is relatively less documented. The major challenge was to a lot of stuff figure myself and how a lot of code is interacting. [Michael](https://github.com/mr-c) was quite helpful and very responsive to queries. Going through testing code also helped.
+- CWL User guide is rich but the codebase is relatively less documented. A major challenge was to figure a lot of stuff  myself and how a lot of code is interacting. [Michael](https://github.com/mr-c) was quite helpful and very responsive to queries. Going through testing code also helped.
 - Strings needed to be handled correctly: differentiating between binary strings and ASCII/Unicode strings. Discussed this issue in two of the weekly posts: [1](https://manu-chroma.github.io/blog/gsoc/'17/2017/06/19/week-3.html), [2](https://manu-chroma.github.io/blog/gsoc/'17/2017/07/03/week-5.html)  
 - Dependency upgrade: Getting Apache Avro working under Python 3 runtime turned out to be a big challenge: [issues/524](https://github.com/common-workflow-language/cwltool/issues/524)
 - Fixing failing conformance was also a challenge, but an interesting one. Even though conformance tests cover less than half codebase of what unit tests do, they helped uncover a lot of subtle and integration testing bugs while porting.
@@ -145,9 +143,9 @@ Related issue: [#334](https://github.com/common-workflow-language/cwltool/issues
 
 ## Acknowledgement
 
-I would like to thank a bunch of people for helping me throughout my journey. One of the best part of open source dev is to see other people willingly help each other out and collaborate to create amazing software. I'd like to thank my mentors [Michael Crusoe](https://github.com/mr-c), [Anton Khodak](https://github.com/anton_khodak) and [Janneke van der Zwaan](https://github.com/jvdzwaan). My interaction and collaboration with mentors have been great.
+I would like to thank a bunch of people for helping me throughout my journey. One of the best part of open source dev is to see other people willingly help each other out and collaborate to create amazing software. I'd like to thank my mentors [Michael Crusoe](https://github.com/mr-c), [Anton Khodak](https://github.com/anton_khodak) and [Janneke van der Zwaan](https://github.com/jvdzwaan). My interaction and collaboration with my mentors was great throughout. It was a big reason why I sticked well to the timeline and was able to keep up my progress.
 Special thanks to Michael. He was very responsive and helpful all along. He ended up giving useful insights throughout whenever I was stuck or something which I could have done better.  
 
-I would also like to thank [Alexandr](https://github.com/AleksandrSl) who helped me in mypy debugging and wrote a few stub files, [Kapil](https://github.com/kapilkd13) who reviwed some of my code and I reviwed his, [Petr](https://github.com/tetron) for hanging around and giving ocassional advice. I would also like to thank the entire CWL community and mypy community: both of them super active on Gitter and offered good advice on porting.
+I would also like to thank [Alexandr](https://github.com/AleksandrSl) who helped me in mypy debugging and wrote a few stub files, [Kapil](https://github.com/kapilkd13) who reviewed some of my code and I reviewed his, [Petr](https://github.com/tetron) for hanging around and giving ocassional advice. A big shout out to the entire CWL and mypy community: both of them were super active on Gitter and offered some very helpful advice on porting and mypy debugging.
 
-I was able to sucessfully deliver my project objectives and thus, would consider it a succesful summer work. I hope my work has postive impact on current and potential users of CWL Tool. 
+I was able to sucessfully deliver my project objectives and thus, would consider it a successful summer work. I hope my work has postive impact on current and potential users of CWL Tool. 
